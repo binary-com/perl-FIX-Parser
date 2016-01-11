@@ -7,7 +7,7 @@ use Test::More;
 plan tests => 1;
 
 BEGIN {
-    use_ok( 'Feed::Panda' ) || print "Bail out!\n";
+    use_ok( 'FIX::Parser' ) || print "Bail out!\n";
 }
 
-diag( "Testing Feed::Panda $Feed::Panda::VERSION, Perl $], $^X" );
+diag( "Testing FIX::Parser $FIX::Parser::VERSION, Perl $], $^X" );
