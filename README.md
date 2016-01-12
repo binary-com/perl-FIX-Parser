@@ -23,7 +23,8 @@ my @msgs = $parser->add($fix_msg);
 
 for(@msgs) {
 	print "Symbol: ".$_->{symbol}."\n";
-        print "Bid: ".$_->{bid}."\n";
+        
+	print "Bid: ".$_->{bid}."\n";
 	print "Ask: ".$_->{ask}."\n";
 	print "Datetime: ".$_->{datetime}."\n";
 }
