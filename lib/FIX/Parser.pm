@@ -6,7 +6,7 @@ use warnings;
 
 =head1 NAME
 
-FIX::Parser - The great new FIX::Parser!
+FIX::Parser - A module to parse FIX market data.
 
 =head1 VERSION
 
@@ -22,31 +22,12 @@ Quick summary of what the module does.
 
 Perhaps a little code snippet.
 
-    use FIX::Parser;
+    use FIX::Parser::FIX44;
 
-    my $foo = FIX::Parser->new();
+    my $parser = FIX::Parser:FIX44->new();
+
+    my @msgs = $parser->add($fix_msg);
     ...
-
-=head1 EXPORT
-
-A list of functions that can be exported.  You can delete this section
-if you don't export anything, such as for a purely object-oriented module.
-
-=head1 SUBROUTINES/METHODS
-
-=head2 function1
-
-=cut
-
-sub function1 {
-}
-
-=head2 function2
-
-=cut
-
-sub function2 {
-}
 
 =head1 AUTHOR
 
