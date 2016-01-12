@@ -13,10 +13,6 @@ my @msgs;
 my $line = <$info>;
 
 @msgs = $fix->add(substr($line, 0, length($line)-1 ) );
-ok !@msgs, "one incomplete message";
-
-$line = <$info>;
-@msgs = $fix->add(substr($line, 0, length($line)-1 ) );
 is @msgs, 1, "one message parsed";
 
 cmp_deeply(
@@ -58,6 +54,7 @@ cmp_deeply(
     ),
     "message contain expected data",
 );
+
 
 
 done_testing;
