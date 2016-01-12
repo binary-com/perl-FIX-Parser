@@ -14,19 +14,23 @@ Version 0.01
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.01_1';
 
 =head1 SYNOPSIS
 
 Quick summary of what the module does.
 
-Perhaps a little code snippet.
+This module provides 2 functions to users, to parse message and to create message.
+Example on how to parse and make message:
 
     use FIX::Parser::FIX44;
 
     my $parser = FIX::Parser:FIX44->new();
 
     my @msgs = $parser->add($fix_msg);
+
+    #Make message
+    my $logon_msg = $parser->make_message('A', 'SenderID', 'TargetID', '98=0', '108=30', '553=' . $arg{user}, '554=' . $arg{pass});
     ...
 
 =head1 AUTHOR

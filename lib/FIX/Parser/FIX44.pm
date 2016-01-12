@@ -2,7 +2,7 @@ package FIX::Parser::FIX44;
 use 5.010;
 use strict;
 use warnings;
-use POSIX qw();
+use POSIX qw(strftime);
 
 sub new {
     my ($class) = @_;
@@ -20,8 +20,8 @@ sub add {
         delete $self->{_len};
     }
 
-    my $cnt;
-    $cnt = 0;
+    my $cnt = 0;
+    
 
     while ($self->{_buf} =~ s/^8=FIX.4.4\x{01}9=([0-9]+)\x{01}//) {
         $self->{_len} = $1 + 7;
@@ -161,7 +161,7 @@ sub parse_message {
 sub make_message {
     my ($self, $type, $sender_id, $target_id, @tags) = @_;
     $self->{_seq}++;
-    my $ts = POSIX::strftime("%Y%m%d-%H:%M:%S.000", gmtime);
+    my $ts = strftime("%Y%m%d-%H:%M:%S.000", gmtime);
     my $msg = join "\x{01}", "35=$type", "49=$sender_id", "52=$ts", "56=$target_id", "34=$self->{_seq}", @tags, '';
     my $len = length $msg;
     $msg = join "\x{01}", '8=FIX.4.4', "9=$len", $msg;
