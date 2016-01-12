@@ -11,10 +11,7 @@ my $fix = FIX::Parser::FIX44->new;
 my @msgs;
 
 my $line = <$info>;
-@msgs = $fix->add(substr($line, 0, length($line)-1 ));
-ok !@msgs, "This is not a complete FIX message";
 
-$line = <$info>;
 @msgs = $fix->add(substr($line, 0, length($line)-1 ) );
 is @msgs, 1, "one message parsed";
 
