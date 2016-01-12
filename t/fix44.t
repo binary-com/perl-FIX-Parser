@@ -19,7 +19,7 @@ cmp_deeply(
     $msgs[0],
     superhashof({
             symbol   => 'AUDJPY',
-            datetime => '=20151218-08:51:45.634',
+            datetime => '20151218-08:51:45.634',
             bid      => '86.908',
             ask      => '86.915',
         },
