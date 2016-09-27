@@ -1,5 +1,6 @@
-#sudo: false
 language: perl
+matrix:
+    fast_finish: true
 services:
     - redis-server
 perl:
@@ -7,20 +8,10 @@ perl:
 install:
     # install prereqs
     - "cpanm Moose"
-    - "cpanm Date::Utility"
-    - "cpanm Format::Util::Numbers"
-    - "cpanm File::ShareDir"
-    - "cpanm DateTime"
-    - "cpanm Carp"
-    - "cpanm feature"
-    - "cpanm Path::Tiny"
-    - "cpanm File::Basename"
-    - "cpanm Template"
-    - "cpanm Array::Utils"
-    - "cpanm Text::CSV::Slurp"
-    - "cpanm Scalar::Util"
+    - "cpanm Test::More"
+    - "cpanm Test::Most"
+    - "cpanm Test::FailWarnings"
     - "cpanm Test::Perl::Critic"
     - "cpanm MooseX::Singleton"
-    - "cpanm YAML::CacheLoader"
 script:
     - "perl Makefile.PL && make test" 
