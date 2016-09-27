@@ -10,6 +10,7 @@ install:
     - "cpanm Moose"
     - "cpanm Test::More"
     - "cpanm Test::Most"
+    - "cpanm Test::FailWarnings"
     - "cpanm Test::Perl::Critic"
     - "cpanm MooseX::Singleton"
 script:
