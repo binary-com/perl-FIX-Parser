@@ -11,5 +11,5 @@ before_install:
 script:
     perl Makefile.PL && PERL5OPT=-MDevel::Cover make test
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+    cover -report codecov
 
