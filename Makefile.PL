@@ -15,9 +15,12 @@ WriteMakefile(
         'ExtUtils::MakeMaker' => 0,
     },
     BUILD_REQUIRES => {
-        'Test::More' => 0,
-        'Test::Most' => 0,
-        'Test::FailWarnings' => 0,
+        'Test::More'                    => 0,
+        'Test::Most'                    => 0,
+        'Test::FailWarnings'            => 0,
+        'Devel::Cover'                  => '1.23',
+        'Test::Perl::Critic'            => '1.03',
+        'Devel::Cover::Report::Codecov' => '0.14',
     },
     PREREQ_PM => {
     },

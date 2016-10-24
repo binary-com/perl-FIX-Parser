@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/binary-com/perl-FIX-Parser.svg?branch=master)](https://travis-ci.org/binary-com/perl-FIX-Parser)
+[![codecov](https://codecov.io/gh/binary-com/perl-FIX-Parser/branch/master/graph/badge.svg)](https://codecov.io/gh/binary-com/perl-FIX-Parser)
+
 # perl-FIX-Parser
 A module to parse FIX market data. Currently supports FIX 4.4.
 
