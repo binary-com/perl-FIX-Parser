@@ -5,13 +5,11 @@ services:
     - redis-server
 perl:
     - "5.14"
-install:
-    # install prereqs
-    - "cpanm Moose"
-    - "cpanm Test::More"
-    - "cpanm Test::Most"
-    - "cpanm Test::FailWarnings"
-    - "cpanm Test::Perl::Critic"
-    - "cpanm MooseX::Singleton"
+before_install:
+    - cpanm --installdeps .
+    - perl -V
 script:
-    - "perl Makefile.PL && make test" 
+    perl Makefile.PL && PERL5OPT=-MDevel::Cover make test
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
