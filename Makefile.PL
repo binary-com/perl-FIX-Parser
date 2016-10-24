@@ -19,6 +19,7 @@ WriteMakefile(
         'Test::Most'         => 0,
         'Test::FailWarnings' => 0,
         'Devel::Cover'       => '1.23',
+        'Test::Perl::Critic' => '1.03',
     },
     PREREQ_PM => {
     },
