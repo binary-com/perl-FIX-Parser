@@ -6,7 +6,7 @@ services:
 perl:
     - "5.14"
 before_install:
-    - cpanm --installdeps .
+    - cpanm -nq --installdeps .
     - perl -V
 script:
     perl Makefile.PL && PERL5OPT=-MDevel::Cover make test
