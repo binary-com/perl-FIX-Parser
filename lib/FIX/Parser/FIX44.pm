@@ -26,8 +26,6 @@ sub add {
         delete $self->{_len};
     }
 
-    my $cnt = 0;
-
     while ($self->{_buf} =~ s/^8=FIX.4.4\x{01}9=([0-9]+)\x{01}//) {
         $self->{_len} = $1 + 7;
         return @msgs if $self->{_len} > length $self->{_buf};

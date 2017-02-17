@@ -21,8 +21,8 @@ Example on how to parse and make message:
 
     use FIX::Parser::FIX44;
 
-    my $parser = FIX::Parser:FIX44->new();
-
+    my $parser = FIX::Parser::FIX44->new();
+    my ($fix_msg, %arg); # init them
     my @msgs = $parser->add($fix_msg);
 
     #Make message
