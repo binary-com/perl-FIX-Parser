@@ -8,10 +8,6 @@ use warnings;
 
 FIX::Parser - A module to parse FIX market data.
 
-=head1 VERSION
-
-Version 0.01
-
 =cut
 
 our $VERSION = '0.01';

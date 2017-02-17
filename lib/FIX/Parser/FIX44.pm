@@ -4,6 +4,12 @@ use strict;
 use warnings;
 use POSIX qw(strftime);
 
+## VERSION
+
+=for Pod::Coverage new add make_message parse_message
+
+=cut
+
 sub new {
     my ($class) = @_;
     return bless {_buf => ''}, $class;
