@@ -8,13 +8,9 @@ use warnings;
 
 FIX::Parser - A module to parse FIX market data.
 
-=head1 VERSION
-
-Version 0.01
-
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
@@ -25,8 +21,8 @@ Example on how to parse and make message:
 
     use FIX::Parser::FIX44;
 
-    my $parser = FIX::Parser:FIX44->new();
-
+    my $parser = FIX::Parser::FIX44->new();
+    my ($fix_msg, %arg); # init them
     my @msgs = $parser->add($fix_msg);
 
     #Make message

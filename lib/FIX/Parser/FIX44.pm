@@ -4,6 +4,12 @@ use strict;
 use warnings;
 use POSIX qw(strftime);
 
+## VERSION
+
+=for Pod::Coverage new add make_message parse_message
+
+=cut
+
 sub new {
     my ($class) = @_;
     return bless {_buf => ''}, $class;
@@ -19,8 +25,6 @@ sub add {
         push @msgs, parse_message(substr $self->{_buf}, 0, $self->{_len}, '');
         delete $self->{_len};
     }
-
-    my $cnt = 0;
 
     while ($self->{_buf} =~ s/^8=FIX.4.4\x{01}9=([0-9]+)\x{01}//) {
         $self->{_len} = $1 + 7;
